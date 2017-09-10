@@ -1,0 +1,10 @@
+services:
+    seo.admin.meta:
+        class: SEOBundle\Admin\MetaAdmin
+        arguments: [~, SEOBundle\Entity\Meta, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm,  show_in_dashboard: false, group: "Meta",label_catalogue: "messages", label: "Meta"}
+
+    seo.meta:
+         class: SEOBundle\Services\MetaService
+         arguments: ["@doctrine.orm.entity_manager"]
