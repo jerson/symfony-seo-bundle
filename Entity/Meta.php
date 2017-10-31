@@ -239,7 +239,7 @@ class Meta
             return '';
         }
 
-        $image = $this->getImageEditor()->zoomCrop(300, 300)->png();
+        $image = $this->getImageEditor()->scaleResize(null, 500)->jpeg();
         return str_replace(Constants::getFullWebDir() . '/', '', $image);
     }
 
